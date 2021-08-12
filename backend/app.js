@@ -26,23 +26,23 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 app.use('/api/auth', userRoutes);
-var session = require("express-session");
-var NedbStore = require('nedb-session-store')( session );
-const sessionMiddleware = session({
-    secret: "fas fas",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      path: '/',
-      httpOnly: true,
-      maxAge: 365 * 24 * 60 * 60 * 1000   // e.g. 1 year
-    },
-    store: new NedbStore({
-      filename: 'path_to_nedb_persistence_file.db'
-    })
-  });
+// var session = require("express-session");
+// var NedbStore = require('nedb-session-store')( session );
+// const sessionMiddleware = session({
+//     secret: "fas fas",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       path: '/',
+//       httpOnly: true,
+//       maxAge: 365 * 24 * 60 * 60 * 1000   // e.g. 1 year
+//     },
+//     store: new NedbStore({
+//       filename: 'path_to_nedb_persistence_file.db'
+//     })
+//   });
 
-  app.use(sessionMiddleware);
+//   app.use(sessionMiddleware);
   
 
 
